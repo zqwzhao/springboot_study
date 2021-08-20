@@ -1,0 +1,10 @@
+server:
+  port: 8080
+person:
+  name: shangsan
+  age: 23
+  sex: 男
+  likes:
+    - book
+    - move
+    - girl

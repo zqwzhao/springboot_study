@@ -1,21 +1,12 @@
 package com.zhaoqw.springboot_web.filter;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import org.springframework.core.annotation.Order;
+
+import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-/**
- * @Auther: zhaoqw
- * @Date: 2021/8/17 - 08 - 17 - 9:04
- * @Description: com.zhaoqw.springboot_web.filter
- * @version: 1.0
- */
-@WebFilter(filterName = "MyFilter", urlPatterns = "/*")
+@WebFilter(filterName = "MyFilter", urlPatterns = "/filter")
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

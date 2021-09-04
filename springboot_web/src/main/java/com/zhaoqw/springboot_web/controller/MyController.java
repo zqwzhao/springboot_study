@@ -35,7 +35,7 @@ public class MyController {
 
 
     @RequestMapping("/thyemleaf")
-    public String thyemleaf(ModelMap map) {
+    public String thyemleafTest(ModelMap map) {
         map.put("thText","th:text设置文本内容 <b>加粗</b>");
         map.put("thUText","th:utext 设置文本内容 <b>加粗</b>");
         map.put("thValue","thValue 设置当前元素的value值");
@@ -43,5 +43,11 @@ public class MyController {
         map.put("thIf","msg is not null");
         map.put("thObject",new Person("zhangsan",12,"男"));
         return "thymeleaf";
+    }
+
+
+    @RequestMapping("login")
+    public String login() {
+        return "login";
     }
 }

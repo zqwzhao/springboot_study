@@ -1,12 +1,13 @@
 package com.zhaoqw.springboot_web.controller;
 
 import com.zhaoqw.springboot_web.servlet.MyHttpSessionListener;
+
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionListener;
+
 
 /**
  * @Auther: zhaoqw
@@ -19,14 +20,20 @@ import javax.servlet.http.HttpSessionListener;
 public class MyController {
 
     @RequestMapping("/hello")
-    public String hello(HttpSession session) {
-        session.setAttribute("zqe","aaa");
-        return "hello_world";
+    public String hello(Model model) {
+        model.addAttribute("msg","Hello,SpringBoot");
+        return "hello";
     }
 
     @RequestMapping("online")
     @ResponseBody
     public String online(){
         return "当前在线人数："+ MyHttpSessionListener.online +"人";
+    }
+
+
+    @RequestMapping("thyemleaf")
+    public String thyemleaf() {
+        return "thyemleaf";
     }
 }
